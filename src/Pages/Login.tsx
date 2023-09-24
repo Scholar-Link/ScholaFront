@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <div className="w-screen h-screen flex justify-center bg-[#F0F9F3]">
@@ -26,7 +28,7 @@ const Login = () => {
         <div className="Rcontainer flex justify-center w-full rounded-xl bg-[#F0F4F3]">
           <div className="form flex flex-col justify-center self-center gap-y-2">
             <h1
-              className="heading self-center text-5xl font-bold text-[#38B593]"
+              className="heading self-center text-5xl my-2 font-bold text-[#38B593]"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -44,7 +46,7 @@ const Login = () => {
               placeholder="Password"
             />
             <button
-              className=" w-[200px] self-center bg-[#38B593] hover:bg-[#38D593] text-white font-bold py-2 px-4 rounded-full h-12"
+              className=" w-[200px] self-center bg-[#38B593] hover:bg-[#38D593] text-white font-bold py-2 px-4 my-3 rounded-full h-12"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -53,9 +55,9 @@ const Login = () => {
             </button>
             <h2 className="self-center">
               Not a member?{" "}
-              {/* <Link href="../Register"> */}
+              <Link to="/signup">
                 <span className="text-blue-700 cursor-pointer">SignUp</span>
-              {/* </Link> */}
+              </Link>
             </h2>
           </div>
         </div>
