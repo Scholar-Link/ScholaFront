@@ -1,4 +1,17 @@
-const Aadhaar = () => {
+import { useNavigate } from "react-router-dom";
+
+interface AaadhaarProps {
+  setAadhaar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Aadhaar: React.FC<AaadhaarProps> = ({ setAadhaar }) => {
+  const navigate = useNavigate();
+
+  const submitAadhaar = () => {
+    //LOGIC TO send an otp. make an async function
+    setAadhaar(true);
+    navigate("/signup/otp");
+  };
   return (
     <div className="w-screen h-screen flex justify-center bg-[#F0F9F3]">
       <div className="container flex flex-row h-[80%] self-center shadow-lg rounded-md">
@@ -29,7 +42,7 @@ const Aadhaar = () => {
               placeholder="Aadhar"
             />
             <button
-              // onClick={handleOnclick}
+              onClick={submitAadhaar}
               className=" w-[200px] self-center bg-[#38B593] hover:bg-[#38D593] text-white font-bold py-2 px-4 rounded-full h-12"
             >
               Genrate OTP

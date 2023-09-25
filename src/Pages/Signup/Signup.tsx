@@ -1,11 +1,11 @@
-// import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-// interface FormData {
-//   name: string;
-//   email: string;
-//   password: string;
-// }
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
 
 interface SignupProps {
   setIsSignedUp: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,16 +13,28 @@ interface SignupProps {
 
 const Signup: React.FC<SignupProps> = ({ setIsSignedUp }) => {
   const navigate = useNavigate();
-  //   const [formData, setFormData] = useState<FormData>({
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //   });
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   //TODO:Write a function to set the form data whenever a corresponsing field changes
+  const handleInputChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    name: string
+  ) => {
+    const { value } = event.target;
+    setFormData((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
 
   const handleSignUp = () => {
+    //TODO:check and give error message if trying to submit with empty field
     //TODO:integrate with backend
+    console.log(formData);
     setIsSignedUp(true);
     navigate("/signup/aadhaar");
   };
@@ -55,16 +67,22 @@ const Signup: React.FC<SignupProps> = ({ setIsSignedUp }) => {
               className="self-center w-[400px] h-[60px] placeholder:p-3"
               type="string"
               placeholder="Name"
+              value={formData.name}
+              onChange={(event) => handleInputChange(event, "name")}
             />
             <input
               className="self-center w-[400px] h-[60px] placeholder:p-3"
               type="email"
               placeholder="Email"
+              value={formData.email}
+              onChange={(event) => handleInputChange(event, "email")}
             />
             <input
               className="self-center w-[400px] h-[60px] placeholder:p-3"
               type="password"
               placeholder="Password"
+              value={formData.password}
+              onChange={(event) => handleInputChange(event, "password")}
             />
             <button
               onClick={handleSignUp}
