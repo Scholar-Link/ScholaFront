@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Education Scholarship",
+    "about": "The Education Scholarship scheme in Karnataka is designed to provide financial assistance to students pursuing higher education. It aims to support students in their educational journey by offering scholarships.",
+    "state": "Karnataka",
+    "certificates_required": [
+      "Xth Certificate",
+      "XIIth Certificate",
+      "Undergraduate Degree Certificate"
+    ]
+  },
+  {
+    "name": "Skill Development Program",
+    "about": "The Skill Development Program in Maharashtra focuses on enhancing the skills of individuals, particularly youth, to make them more employable. It offers training and skill development opportunities to help participants gain valuable skills for their careers.",
+    "state": "Maharashtra",
+    "certificates_required": [
+      "Xth Certificate",
+      "XIIth Certificate"
+    ]
+  },
+  {
+    "name": "Women Empowerment Scheme",
+    "about": "The Women Empowerment Scheme in Rajasthan is dedicated to empowering women by providing them with opportunities for higher education and skill development. It aims to create a more inclusive and empowered society by supporting women's education and career growth.",
+    "state": "Rajasthan",
+    "certificates_required": [
+      "XIIth Certificate",
+      "Undergraduate Degree Certificate"
+    ]
+  },
+  {
+    "name": "Agricultural Subsidy",
+    "about": "The Agricultural Subsidy scheme in Punjab is aimed at supporting farmers in the state. It provides financial assistance and subsidies to farmers to help them improve their agricultural practices, purchase equipment, and enhance crop production.",
+    "state": "Punjab",
+    "certificates_required": ["Xth Certificate"]
+  }
+]
