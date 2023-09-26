@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SchemeCompo from "../../Components/SchemeCompo";
-import SchemeList from "../../Components/schemes.json";
+import SchemeList from "../../../public/schemes.json";
 import Navbar from "../../Components/Navbar";
 
 interface SchemeProps {

@@ -1,10 +1,12 @@
 import { ChangeEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import SignupForm from "../../Components/SignupForm";
 
 interface FormData {
   name: string;
   email: string;
   password: string;
+  state: string;
 }
 
 interface SignupProps {
@@ -17,6 +19,7 @@ const Signup: React.FC<SignupProps> = ({ setIsSignedUp }) => {
     name: "",
     email: "",
     password: "",
+    state: "",
   });
 
   //TODO:Write a function to set the form data whenever a corresponsing field changes
@@ -55,47 +58,11 @@ const Signup: React.FC<SignupProps> = ({ setIsSignedUp }) => {
         </div>
         <div className="Rcontainer flex justify-center w-full rounded-md bg-[#F0F4F3]">
           <div className="form flex flex-col justify-center self-center gap-y-2">
-            <h1
-              className="heading self-center text-5xl my-2 font-bold text-[#38B593]"
-              style={{
-                fontFamily: "Montserrat",
-              }}
-            >
-              CREATE ACCOUNT
-            </h1>
-            <input
-              className="self-center w-[400px] h-[60px] placeholder:p-3"
-              type="string"
-              placeholder="Name"
-              value={formData.name}
-              onChange={(event) => handleInputChange(event, "name")}
+            <SignupForm
+              formData={formData}
+              onInputChange={handleInputChange}
+              onSignUp={handleSignUp}
             />
-            <input
-              className="self-center w-[400px] h-[60px] placeholder:p-3"
-              type="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(event) => handleInputChange(event, "email")}
-            />
-            <input
-              className="self-center w-[400px] h-[60px] placeholder:p-3"
-              type="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={(event) => handleInputChange(event, "password")}
-            />
-            <button
-              onClick={handleSignUp}
-              className=" w-[200px] self-center bg-[#38B593] hover:bg-[#38D593] text-white font-bold py-2 px-4 my-3 rounded-full h-12"
-            >
-              Register
-            </button>
-            <h2 className="self-center">
-              Already have an Account?
-              <Link to="/login">
-                <span className="text-blue-700 cursor-pointer">Login</span>
-              </Link>
-            </h2>
           </div>
         </div>
       </div>
